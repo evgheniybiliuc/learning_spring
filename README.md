@@ -1,1 +1,1 @@
-# learning_spring
+# Spring MVC example.
