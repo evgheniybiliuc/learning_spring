@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Not initializing employee name variable-->
+    <bean name="employee" class="home.learning.spring.bean.Employee" scope="prototype"/>
+
+    <bean name="employeeService" class="home.learning.spring.service.InterfaceExtendingEmployeeService">
+        <property name="employee" ref="employee"/>
+    </bean>
+
+    <bean name="xmlEmployeeService" class="home.learning.spring.service.XmlEmployeeService"
+          init-method="init" destroy-method="destroy">
+        <property name="employee" ref="employee"/>
+    </bean>
+
+    <!-- initializing CommonAnnotationBeanPostProcessor is same as context:annotation-config -->
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+    <bean name="annotatedEmployeeService" class="home.learning.spring.service.AnnotatedEmployeeService" />
+</beans>
