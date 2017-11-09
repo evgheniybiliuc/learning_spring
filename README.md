@@ -1,1 +1,1 @@
-# Spring **@Autowired** Example.
+# Spring Examples.
