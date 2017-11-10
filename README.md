@@ -1,1 +1,1 @@
-# Spring Examples.
+# Spring Internationalization example.
